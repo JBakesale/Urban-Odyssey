@@ -2,6 +2,18 @@
 git clone https://github.com/JBakesale/Urban-Odyssey.git
 
 
+## Github Workflow Overview
+
+cd Urban-Odyssey
+
+git checkout -b feature/1-new-feature
+
+git add .
+git commit -m "Add new feature"
+
+git push origin feature/1-new-feature
+
+
 ## Requirement
 - Ruby
 - Rails

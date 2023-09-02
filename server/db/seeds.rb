@@ -9,6 +9,8 @@
 # db/seeds.rb
 
 puts "Create Users"
+AdventureLocation.destroy_all
+UserAdventure.destroy_all
 User.destroy_all
 User.create(username: 'Lucas', email: 'lucas@example.com', password: 'password1')
 User.create(username: 'Josh', email: 'josh@example.com', password: 'password2')
@@ -27,14 +29,14 @@ Location.create(location_name: '24/7 Gym', location_tag: 'Gym', latitude: 234567
 Location.create(location_name: 'Safeway', location_tag: 'Grocery Store', latitude: 3456789, longitude: 7654321)
 
 puts "Create Adventures completed by users"
-UserAdventure.destroy_all
+
 UserAdventure.create(user_id: 1, adventure_id: 2, date: Time.now)
 UserAdventure.create(user_id: 1, adventure_id: 3, date: Time.now)
 UserAdventure.create(user_id: 2, adventure_id: 1, date: Time.now)
 UserAdventure.create(user_id: 3, adventure_id: 3, date: Time.now)
 
 puts "Create Adventures per location "
-AdventureLocation.destroy_all
+
 AdventureLocation.create(adventure_id: 1, location_id: 1)
 AdventureLocation.create(adventure_id: 1, location_id: 2)
 AdventureLocation.create(adventure_id: 2, location_id: 2)

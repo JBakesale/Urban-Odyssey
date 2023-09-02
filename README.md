@@ -25,7 +25,7 @@
   - `git pull origin main`
   ### And repeat!
 
-## Requirement
+## Requirements
 - Ruby
 - Rails
 - Postgresql

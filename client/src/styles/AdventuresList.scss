@@ -1,0 +1,9 @@
+/* Style for the adventures list container */
+.adventures-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap as needed */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 20px 0; /* Add top and bottom margins */
+}

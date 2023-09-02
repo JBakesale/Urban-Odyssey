@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adventure_name: MyString
+  adventure_tag: MyString
+  adventure_steps: MyText
+
+two:
+  adventure_name: MyString
+  adventure_tag: MyString
+  adventure_steps: MyText

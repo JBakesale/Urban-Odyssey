@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adventure: one
+  location: one
+
+two:
+  adventure: two
+  location: two

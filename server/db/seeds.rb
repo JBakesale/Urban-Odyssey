@@ -1,26 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-# db/seeds.rb
-
 puts "Create Users"
 AdventureLocation.destroy_all
 UserAdventure.destroy_all
 User.destroy_all
-User.create(username: 'Lucas', email: 'lucas@example.com', password: 'password1')
-User.create(username: 'Josh', email: 'josh@example.com', password: 'password2')
-User.create(username: 'Ahmad', email: 'ahmad3@example.com', password: 'password3')
+User.create(username: 'Lucas', email: 'lucas@example.com', password: 'password1', profile_picture: '')
+User.create(username: 'Josh', email: 'josh@example.com', password: 'password2', profile_picture: '')
+User.create(username: 'Ahmad', email: 'ahmad3@example.com', password: 'password3', profile_picture: '')
 
 puts "Create Adventures"
 Adventure.destroy_all
-Adventure.create(adventure_name: 'Barbarian Training', adventure_tag: 'Gym', adventure_steps: ['Step 1', 'Step 2', 'Step 3'])
-Adventure.create(adventure_name: 'Restocking Supplies', adventure_tag: 'Grocery Store', adventure_steps: ['Step A', 'Step B', 'Step C'])
-Adventure.create(adventure_name: 'Learning Spells', adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'])
+Adventure.create(adventure_name: 'Barbarian Training', adventure_tag: 'Gym', adventure_steps: ['Step 1', 'Step 2', 'Step 3'], adventure_image: '',difficulty: 'Easy')
+Adventure.create(adventure_name: 'Restocking Supplies', adventure_tag: 'Grocery Store', adventure_steps: ['Step A', 'Step B', 'Step C'], adventure_image: '', difficulty: 'Medium')
+Adventure.create(adventure_name: 'Learning Spells', adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'], adventure_image: '',difficulty: 'challenging')
 
 puts "Create Locations"
 Location.destroy_all

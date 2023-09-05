@@ -1,12 +1,12 @@
 import React from "react";
 import BackgroundContainer from "../components/BackgroundContainer";
 import AdventuresList from "../components/AdventuresList";
-import '../styles/HomeRoute.scss'
+import '../styles/HomePage.scss'
 
 
 
 
-const HomeRoute = (props) => {
+const HomePage = (props) => {
 
  
   
@@ -22,4 +22,4 @@ const HomeRoute = (props) => {
   );
 };
 
-export default HomeRoute;
+export default HomePage;

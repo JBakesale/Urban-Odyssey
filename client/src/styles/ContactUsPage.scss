@@ -1,0 +1,74 @@
+/* ContactUsPage.scss */
+
+.contact-us-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure background color covers the entire page */
+  background-color: #1a1a1a; /* Dark background color */
+  color: #fff; /* Text color */
+  padding: 20px; /* Add padding for mobile screens */
+
+  .contact-us-content {
+    text-align: center;
+    max-width: 800px; /* Set a maximum width to prevent text from stretching too wide */
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .team-member {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .team-member-image {
+          width: 100px; /* Adjust the image size */
+          height: 100px; /* Adjust the image size */
+          border-radius: 50%;
+          margin-right: 20px;
+          object-fit: cover;
+        }
+
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        a {
+          color: #00bcd4;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #008ba3;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .contact-us-page {
+    padding: 10px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/AuthPage.scss'; // Import the shared authentication page styles
+import '../styles/AuthPage.scss';
 
 const Login = () => {
   const [formData, setFormData] = useState({

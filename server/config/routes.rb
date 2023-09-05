@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "home#index"
 
+  resources :users
   resources :adventures
   resources :locations
   resources :user_adventures
-
+  resources :adventure_locations
+  
 end

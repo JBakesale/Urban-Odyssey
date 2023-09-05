@@ -7,7 +7,7 @@ function AdventureListItem(props) {
   return (
     <div className="adventure-container" key={adventure.id}>
       <div className="image-container">
-        <img src={adventure.imageUrl} alt={`Adventure ${adventure.id}`} />
+        <img src={adventure.imageUrl} alt={`Adventure ${adventure.adventure_name}`} />
       </div>
       <div className="text-container">
         <h2 className="description">{adventure.description}</h2>

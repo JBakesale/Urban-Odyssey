@@ -9,9 +9,13 @@ import UserDetailsPage from './views/UserDetailsPage';
 import SignUp from './views/SignUp';
 import Login from './views/Login';
 import AdventurePage from './components/AdventurePage';
+import { UserLocationProvider } from './providers/UserLocationContext';
+
+
 
 function App() {
   return (
+    <UserLocationProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -22,6 +26,7 @@ function App() {
         <Route path="/adventure/:id" element={<AdventurePage />} />
       </Routes>
     </Router>
+    </UserLocationProvider>
   );
 }
 

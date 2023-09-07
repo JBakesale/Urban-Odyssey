@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/AdventurePage.scss";
+import RunAdventure from "./RunAdventure";
 
 function AdventurePage() {
   const { id } = useParams();
   const [adventure, setAdventure] = useState(null);
+  const [startAdventure, setStartAdventure] = useState(false);
+
+  const handleStartAdventureClick = () => {
+    setStartAdventure((prev) => !prev);
+  };
 
   useEffect(() => {
     console.log(`Fetching Axios request to /adventures/${id}`);
@@ -25,11 +31,17 @@ function AdventurePage() {
   }
 
   return (
-    <div className="adventure-page-container">
-      <h1>{adventure.adventure_name}</h1>
-      <p>Tag: {adventure.adventure_tag}</p>
-      <p>Difficulty: {adventure.difficulty}</p>
-      <button>Start Adventure!</button>
+    <div>
+      {!startAdventure ? (
+        <div className="adventure-page-container">
+          <h1>{adventure.adventure_name}</h1>
+          <p>Tag: {adventure.adventure_tag}</p>
+          <p>Difficulty: {adventure.difficulty}</p>
+          <button onClick={handleStartAdventureClick}>Start Adventure!</button>
+        </div>
+      ) : (
+        <RunAdventure />
+      )}
     </div>
   );
 }

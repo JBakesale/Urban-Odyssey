@@ -8,9 +8,13 @@ import ContactUsPage from './views/ContactUsPage';
 import UserDetailsPage from './views/UserDetailsPage';
 import SignUp from './views/SignUp';
 import Login from './views/Login';
+import { UserLocationProvider } from './providers/UserLocationContext';
+
+
 
 function App() {
   return (
+    <UserLocationProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -20,6 +24,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUsPage />} />
       </Routes>
     </Router>
+    </UserLocationProvider>
   );
 }
 

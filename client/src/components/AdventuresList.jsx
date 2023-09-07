@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import adventures from '../mocks/adventures'; 
-
 import axios from 'axios';
-
 import '../styles/AdventuresList.scss'
 import AdventureListItem from './AdventureListItem';
 

@@ -1,0 +1,39 @@
+// medieval-themed colours
+$primary-color: #8b0000; // Dark Red
+$secondary-color: #2e2e2e; // Dark Gray
+$background-color: #f5e1da; // Light Beige
+$text-color: #000; // Black
+$button-color: #ffd700; // Gold
+
+
+.adventure-page-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 20px;
+  border: 2px solid $primary-color;
+  border-radius: 5px;
+  
+  h1 {
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  button {
+    background-color: $button-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darken($button-color, 10%);
+    }
+  }
+}

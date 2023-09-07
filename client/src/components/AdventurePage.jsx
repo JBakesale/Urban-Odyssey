@@ -21,11 +21,11 @@ function AdventurePage() {
   }, [id]);
 
   if (!adventure) {
-    return <div>Loading Adventure...</div>;
+    return <div>No Adventure Found...</div>;
   }
 
   return (
-    <div>
+    <div className="adventure-page-container">
       <h1>{adventure.adventure_name}</h1>
       <p>Tag: {adventure.adventure_tag}</p>
       <p>Difficulty: {adventure.difficulty}</p>

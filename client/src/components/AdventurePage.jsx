@@ -9,7 +9,7 @@ function AdventurePage() {
   const [adventure, setAdventure] = useState(null);
   const [startAdventure, setStartAdventure] = useState(false);
 
-  const handleStartAdventureClick = () => {
+  const onClickStart = () => {
     setStartAdventure((prev) => !prev);
   };
 
@@ -37,10 +37,10 @@ function AdventurePage() {
           <h1>{adventure.adventure_name}</h1>
           <p>Tag: {adventure.adventure_tag}</p>
           <p>Difficulty: {adventure.difficulty}</p>
-          <button onClick={handleStartAdventureClick}>Start Adventure!</button>
+          <button onClick={onClickStart}>Start Adventure!</button>
         </div>
       ) : (
-        <RunAdventure />
+        <RunAdventure adventureId={adventure.id} />
       )}
     </div>
   );

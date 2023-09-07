@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-
-function RunAdventure() {
-  const { id } = useParams();
-
-  // Task 1: Manage state for displaying alerts
-  const [showAlert1, setShowAlert1] = useState(false);
-  const [showAlert2, setShowAlert2] = useState(false);
-
-  // Task 2: Manage state for Google Maps
-  const [map, setMap] = useState(null);
-
-  // Task 3: Manage state for tracking progress
+function RunAdventure(props) {
   const [progress, setProgress] = useState(0);
+
+  /*
+  // Manage state for Google Maps
+  const [map, setMap] = useState(null);
 
   useEffect(() => {
     // Fetch adventure details based on the ID or any other necessary data
 
     // Initialize Google Maps
     const initMap = () => {
-      // Use the Google Maps API to create and configure the map
+      // create and configure the map
       const mapOptions = {
         center: { lat: 0, lng: 0 }, // Set the initial map center coordinates
         zoom: 12, // Set the initial zoom level
@@ -45,31 +37,59 @@ function RunAdventure() {
     document.head.appendChild(script);
 
     return () => {
-      // Clean up the Google Maps API script
       script.removeEventListener("load", initMap);
       document.head.removeChild(script);
     };
   }, [id]);
+ */
+
+  // mock steps to be replaced by db
+  const steps = [
+    {
+      stepNumber: 1,
+      title: "Step 1",
+      description: "Description for Step 1",
+    },
+    {
+      stepNumber: 2,
+      title: "Step 2",
+      description: "Description for Step 2",
+    },
+    {
+      stepNumber: 3,
+      title: "Step 3",
+      description: "Description for Step 3",
+    },
+  ];
+
+  const handleStepComplete = (stepNumber) => {
+    const completedStepIndex = steps.findIndex(
+      (step) => step.stepNumber === stepNumber
+    );
+
+    const newProgress = ((completedStepIndex + 1) / steps.length) * 100;
+
+    setProgress(newProgress);
+  };
 
   return (
-    <div className="specific-adventure-page">
-      <h1>Adventure Title</h1>
-      <p>Adventure Description</p>
+    <div className="run-adventure-page">
+      <h1>{props.adventure_name}</h1>
+      <h3>Adventure Steps</h3>
 
-      {/* Task 1: Display alerts */}
-      {showAlert1 && <div className="alert">Alert 1</div>}
-      {showAlert2 && <div className="alert">Alert 2</div>}
-
-      {/* Task 2: Display Google Maps */}
+      {/* Display Google Maps */}
       <div id="map" className="map"></div>
 
-      {/* Task 3: Track progress */}
-      <div className="progress">
-        <p>Progress: {progress}%</p>
-        <button onClick={() => setProgress(progress + 10)}>
-          Increment Progress
-        </button>
-      </div>
+      <p>Progress: {progress.toFixed(2)}%</p>
+      {steps.map((step) => (
+        <div key={step.stepNumber} className="step">
+          <h2>{step.title}</h2>
+          <p></p>
+          <button onClick={() => handleStepComplete(step.stepNumber)}>
+            Complete
+          </button>
+        </div>
+      ))}
     </div>
   );
 }

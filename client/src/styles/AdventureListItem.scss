@@ -4,16 +4,17 @@
   padding: 10px;
   padding-bottom: 0px;
   max-width: 300px; /* Set a maximum width */
-  width: 100%; /* Take full width of the parent container */
+  width: 90%; /* Take full width of the parent container */
   background-color: #e2c5a3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
-  margin-top: 50px;
+  margin-top: 40%;
   margin-right: 10px;
   margin-bottom: 10px;
+  height: 75%;
 
   &:hover {
     transform: translateY(-5px);
@@ -23,6 +24,7 @@
     width: 100%;
     padding-top: 50%; /* Maintain a 2:1 aspect ratio for the image */
     position: relative;
+    flex: 1;
 
     img {
       position: absolute;

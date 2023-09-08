@@ -62,7 +62,7 @@ const GoogleMap = () => {
     initMap();
   }, [userLocation]); // Include userLocation in the dependency array to update the map when it changes
 
-  return <div id="map" style={{ height: '500px', width: '100%' }}></div>;
+  return <div id="map" style={{ height: '300px', width: '100%' }}></div>;
 };
 
 export default GoogleMap;

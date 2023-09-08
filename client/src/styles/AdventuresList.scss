@@ -1,9 +1,54 @@
-/* Style for the adventures list container */
+/* AdventuresList.scss */
+
+/* Medieval-style background color with image background */
 .adventures-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap as needed */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  margin: 20px 0; /* Add top and bottom margins */
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black; /* Dark brown background */
+  background-image: url("../../public/images/quest-board.png");
+  background-size: cover; /* Make the background image responsive */
+  background-position: center; /* Center the background image */
+  color: #ffffff; /* White text color */
+  padding: 16px;
+  border-radius: 8px; /* Rounded corners for a medieval touch */
+}
+
+/* Medieval-style border for each adventure item */
+.adventure-item {
+  border: 2px solid #8b5f35; /* A darker brown border */
+  margin-bottom: 16px; /* Spacing between adventure items */
+  padding: 16px;
+  border-radius: 8px; /* Rounded corners for each item */
+}
+
+/* Medieval-style text and link colors */
+.adventure-title {
+  font-size: 18px;
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth color transition for links */
+}
+
+.adventure-title:hover {
+  color: #ec9430; /* A medieval-style gold color on hover */
+}
+
+.adventure-description {
+  font-size: 14px;
+}
+
+/* Medieval-style button */
+.adventure-button {
+  background-color: #8b5f35; /* Dark brown button background */
+  color: #ffffff; /* White text color */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth background color transition for buttons */
+}
+
+.adventure-button:hover {
+  background-color: #ec9430; /* A medieval-style gold color on button hover */
 }

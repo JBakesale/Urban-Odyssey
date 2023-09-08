@@ -8,9 +8,14 @@ import ContactUsPage from './views/ContactUsPage';
 import UserDetailsPage from './views/UserDetailsPage';
 import SignUp from './views/SignUp';
 import Login from './views/Login';
+import AdventurePage from './components/AdventurePage';
+import { UserLocationProvider } from './providers/UserLocationContext';
+
+
 
 function App() {
   return (
+    <UserLocationProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -18,8 +23,10 @@ function App() {
         <Route path="/user-details" element={<UserDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/adventure/:id" element={<AdventurePage />} />
       </Routes>
     </Router>
+    </UserLocationProvider>
   );
 }
 

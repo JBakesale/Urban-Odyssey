@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 function RunAdventure(props) {
-  const [progress, setProgress] = useState(0);
-
   /*
   // Manage state for Google Maps
   const [map, setMap] = useState(null);
@@ -43,6 +41,11 @@ function RunAdventure(props) {
   }, [id]);
  */
 
+  const [progress, setProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [completedSteps, setCompletedSteps] = useState([]);
+  const [adventureComplete, setAdventureComplete] = useState(false);
+
   // mock steps to be replaced by db
   const steps = [
     {
@@ -63,33 +66,82 @@ function RunAdventure(props) {
   ];
 
   const handleStepComplete = (stepNumber) => {
-    const completedStepIndex = steps.findIndex(
-      (step) => step.stepNumber === stepNumber
-    );
+    if (!completedSteps.includes(stepNumber)) {
+      setCompletedSteps([...completedSteps, stepNumber]);
+    }
+    if (completedSteps.length + 1 === steps.length) {
+      setAdventureComplete(true);
+    }
+    setCurrentStep(currentStep + 1);
+  };
 
-    const newProgress = ((completedStepIndex + 1) / steps.length) * 100;
-
+  const updateProgress = () => {
+    const newProgress = ((completedSteps.length + 1) / steps.length) * 100;
     setProgress(newProgress);
+  };
+
+  const handleAdventureReset = () => {
+    setProgress(0);
+    setCurrentStep(0);
+    setCompletedSteps([]);
+    setAdventureComplete(false);
+  };
+
+  const showAlert = () => {
+    alert(`Please confirm step ${currentStep + 1} complete`);
   };
 
   return (
     <div className="run-adventure-page">
-      <h1>{props.adventure_name}</h1>
-      <h3>Adventure Steps</h3>
+      <h1 className="adventure-header">{props.adventure_name}</h1>
 
       {/* Display Google Maps */}
       <div id="map" className="map"></div>
 
-      <p>Progress: {progress.toFixed(2)}%</p>
-      {steps.map((step) => (
-        <div key={step.stepNumber} className="step">
-          <h2>{step.title}</h2>
-          <p></p>
-          <button onClick={() => handleStepComplete(step.stepNumber)}>
-            Complete
+      {adventureComplete ? (
+        <div className="adventure-complete">
+          <p className="adventure-subheader">
+            Congratulations! Adventure Complete!
+          </p>
+          <button className="restart-button" onClick={handleAdventureReset}>
+            {" "}
+            Restart Adventure?
           </button>
         </div>
-      ))}
+      ) : (
+        <>
+          <h3 className="section-header">Let the Adventure Begin!</h3>
+          <div className="progress-container">
+            <h3 className="progress-subheader">Adventure Progress</h3>
+            <div className="progress-bar">
+              <div
+                className="progress-bar-fill"
+                style={{ width: `${progress}%` }}
+              >
+                <p className="progress-text">{progress}%</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="step-container">
+            <div className="step">
+              <h2 className="step-title">{steps[currentStep].title}</h2>
+              <p className="step-description">
+                {steps[currentStep].description}
+              </p>
+              <button
+                className="complete-button"
+                onClick={() => {
+                  showAlert();
+                  handleStepComplete(steps[currentStep].stepNumber);
+                }}
+              >
+                Step Complete
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

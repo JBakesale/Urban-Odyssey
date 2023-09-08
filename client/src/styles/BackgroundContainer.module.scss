@@ -1,4 +1,4 @@
-/* Custom Background Container styles */
+
 .custom-background-container {
   position: relative;
   width: 100%;
@@ -7,7 +7,6 @@
   background-color: #5a3a24; /* A dark, medieval-style background color */
 }
 
-/* Custom Container content styles */
 .custom-container {
   position: relative;
   z-index: 1;
@@ -16,20 +15,18 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* A modern-style semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.8);
   background-image: url("../../public/images/tavern.png");
   background-size: cover; /* Make the background image responsive */
   background-position: center; /* Center the background image */
-  border: 2px solid #333; /* A modern-style border */
   padding: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* A modern-style box shadow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
 }
 
-/* Custom Title styles with a modern font and subtle text effects */
 .custom-title {
   font-size: 36px;
-  font-family: 'Helvetica Neue', sans-serif; /* Modern font family */
-  color: white; /* Dark text color for modern look */
+  font-family: 'Helvetica Neue', sans-serif; 
+  color: white;
   background-color: rgba(51, 51, 51, 0.5);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }

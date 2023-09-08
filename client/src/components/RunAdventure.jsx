@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import '../styles/RunAdventure.scss'
-
+import "../styles/RunAdventure.scss";
 
 function RunAdventure({ adventure }) {
-  const {
-    adventure_name,
-    adventure_tag,
-    adventure_steps,
-    adventure_image,
-    difficulty,
-  } = adventure;
+  const { adventure_name, adventure_image, difficulty } = adventure;
 
-  console.log(
-    "Adventure Name:",
-    adventure_name,
-    "Adventure Steps:",
-    adventure_steps.length
-  );
+  const adventure_steps = [
+    {
+      stepNumber: 1,
+      title: "Start at Totem Poles",
+      description: "Begin your adventure at the famous Totem Poles.",
+      clues: [],
+    },
+    {
+      stepNumber: 2,
+      title: "SQUAT ATTACK!",
+      description: "Do 10 squats to scare off the Troll by the Mermaid statue.",
+      clues: [],
+    },
+  ];
 
   const [progress, setProgress] = useState({
     current: 0,
@@ -98,8 +99,12 @@ function RunAdventure({ adventure }) {
 
           <div className="step-container">
             <div className="step">
-              <h2 className="step-title">{adventure_steps[currentStep].title}</h2>
-              <p className="step-description">{adventure_steps[currentStep].description}</p>
+              <h2 className="step-title">
+                {adventure_steps[currentStep].title}
+              </h2>
+              <p className="step-description">
+                {adventure_steps[currentStep].description}
+              </p>
               <button
                 className="complete-button"
                 onClick={() => {

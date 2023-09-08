@@ -1,102 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import '../styles/RunAdventure.scss'
 
-function RunAdventure(props) {
-  /*
-  // Manage state for Google Maps
-  const [map, setMap] = useState(null);
 
-  useEffect(() => {
-    // Fetch adventure details based on the ID or any other necessary data
+function RunAdventure({ adventure }) {
+  const {
+    adventure_name,
+    adventure_tag,
+    adventure_steps,
+    adventure_image,
+    difficulty,
+  } = adventure;
 
-    // Initialize Google Maps
-    const initMap = () => {
-      // create and configure the map
-      const mapOptions = {
-        center: { lat: 0, lng: 0 }, // Set the initial map center coordinates
-        zoom: 12, // Set the initial zoom level
-      };
+  console.log(
+    "Adventure Name:",
+    adventure_name,
+    "Adventure Steps:",
+    adventure_steps.length
+  );
 
-      const mapElement = document.getElementById("map"); // Replace with the actual map element ID
-
-      const googleMap = new window.google.maps.Map(mapElement, mapOptions);
-
-      // Store the map in state
-      setMap(googleMap);
-    };
-
-    // Load the Google Maps API script
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
-    script.defer = true;
-    script.async = true;
-
-    script.addEventListener("load", initMap);
-
-    document.head.appendChild(script);
-
-    return () => {
-      script.removeEventListener("load", initMap);
-      document.head.removeChild(script);
-    };
-  }, [id]);
- */
-
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState({
+    current: 0,
+    total: adventure_steps.length,
+  });
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
   const [adventureComplete, setAdventureComplete] = useState(false);
-
-  // mock steps to be replaced by db
-  const steps = [
-    {
-      stepNumber: 1,
-      title: "Step 1",
-      description: "Description for Step 1",
-    },
-    {
-      stepNumber: 2,
-      title: "Step 2",
-      description: "Description for Step 2",
-    },
-    {
-      stepNumber: 3,
-      title: "Step 3",
-      description: "Description for Step 3",
-    },
-  ];
 
   const handleStepComplete = (stepNumber) => {
     if (!completedSteps.includes(stepNumber)) {
       setCompletedSteps([...completedSteps, stepNumber]);
     }
-    if (completedSteps.length + 1 === steps.length) {
+    if (completedSteps.length + 1 === progress.total) {
       setAdventureComplete(true);
     }
     setCurrentStep(currentStep + 1);
+    updateProgress();
   };
 
   const updateProgress = () => {
-    const newProgress = ((completedSteps.length + 1) / steps.length) * 100;
+    const newProgress = {
+      current: completedSteps.length + 1,
+      total: progress.total,
+    };
     setProgress(newProgress);
   };
 
   const handleAdventureReset = () => {
-    setProgress(0);
+    setProgress({ current: 0, total: progress.total });
     setCurrentStep(0);
     setCompletedSteps([]);
     setAdventureComplete(false);
   };
 
   const showAlert = () => {
-    alert(`Please confirm step ${currentStep + 1} complete`);
+    alert(`Please confirm step ${currentStep + 1} is complete`);
   };
 
   return (
     <div className="run-adventure-page">
-      <h1 className="adventure-header">{props.adventure_name}</h1>
+      <h1 className="adventure-header">{adventure_name}</h1>
 
-      {/* Display Google Maps */}
-      <div id="map" className="map"></div>
+      {/* Display Google Maps
+      <div id="map" className="map"></div> */}
 
       {adventureComplete ? (
         <div className="adventure-complete">
@@ -104,9 +70,12 @@ function RunAdventure(props) {
             Congratulations! Adventure Complete!
           </p>
           <button className="restart-button" onClick={handleAdventureReset}>
-            {" "}
             Restart Adventure?
           </button>
+          <br />
+          <Link to="/" className="back-button">
+            Go Back for more Adventures
+          </Link>
         </div>
       ) : (
         <>
@@ -116,24 +85,26 @@ function RunAdventure(props) {
             <div className="progress-bar">
               <div
                 className="progress-bar-fill"
-                style={{ width: `${progress}%` }}
+                style={{
+                  width: `${(progress.current / progress.total) * 100}%`,
+                }}
               >
-                <p className="progress-text">{progress}%</p>
+                <p className="progress-text">
+                  {progress.current}/{progress.total}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="step-container">
             <div className="step">
-              <h2 className="step-title">{steps[currentStep].title}</h2>
-              <p className="step-description">
-                {steps[currentStep].description}
-              </p>
+              <h2 className="step-title">{adventure_steps[currentStep].title}</h2>
+              <p className="step-description">{adventure_steps[currentStep].description}</p>
               <button
                 className="complete-button"
                 onClick={() => {
                   showAlert();
-                  handleStepComplete(steps[currentStep].stepNumber);
+                  handleStepComplete(adventure_steps[currentStep].stepNumber);
                 }}
               >
                 Step Complete

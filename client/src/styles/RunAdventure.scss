@@ -1,0 +1,82 @@
+/* RunAdventure.scss */
+
+.run-adventure-page {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.adventure-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.progress-container {
+  margin-top: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+}
+
+.progress-subheader {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+}
+
+.step-container {
+  margin-top: 20px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.complete-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.complete-button:hover {
+  background-color: #0056b3;
+}

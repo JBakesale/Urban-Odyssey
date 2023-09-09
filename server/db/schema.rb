@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 720230902004254) do
 
   create_table "adventures", force: :cascade do |t|
     t.string "adventure_name"
+    t.string "adventure_description"
     t.string "adventure_tag"
     t.text "adventure_steps"
     t.datetime "created_at", null: false

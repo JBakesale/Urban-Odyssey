@@ -60,8 +60,8 @@ adventure_steps: [
 ], 
 adventure_image: "images/stanley_park.png",
 difficulty: 'Easy')
-Adventure.create(adventure_name: 'Restocking Supplies', adventure_tag: 'Grocery Store', adventure_steps: ['Step A', 'Step B', 'Step C'], adventure_image: 'images/supplies.jpg', difficulty: 'Medium')
-Adventure.create(adventure_name: 'Learning Spells', adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'], adventure_image: 'images/spells.jpg',difficulty: 'Challenging')
+Adventure.create(adventure_name: 'Restocking Supplies', adventure_description: "N/A", adventure_tag: 'Grocery Store', adventure_steps: ['Step A', 'Step B', 'Step C'], adventure_image: 'images/supplies.jpg', difficulty: 'Medium')
+Adventure.create(adventure_name: 'Learning Spells', adventure_description: "N/A", adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'], adventure_image: 'images/spells.jpg',difficulty: 'Challenging')
 
 puts "Create Locations"
 Location.destroy_all

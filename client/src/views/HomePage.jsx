@@ -13,9 +13,9 @@ const HomePage = (props) => {
   return (
     <>
   
-      <BackgroundContainer/>
-      <AdventuresList/>
-      <MapsApi/>
+      <BackgroundContainer />
+      <AdventuresList />
+      <MapsApi />
      
     
  

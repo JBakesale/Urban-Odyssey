@@ -1,43 +1,90 @@
 import React from 'react';
 import '../styles/ContactUsPage.scss';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 
 const ContactUsPage = () => {
   return (
     <div className="contact-us-page">
       <div className="contact-us-content">
         <h1>Contact Us</h1>
-        <p>
+        <p className="contact-text">
           Want to get in touch with the adventurous minds behind this project? Feel free to reach out to us individually:
         </p>
         <div className="team-members">
+          <div className="team-member">
+            <img
+              src="/images/lucas.jpg" // Replace with Lucas' image source
+              className="team-member-image"
+            />
+            <div>
+            <h3>Lucas Molina</h3>
+              <div className="contact-info">
+                <div className="icon">
+                  <EmailIcon />
+                </div>
+                <div className="email-info">
+                  <a href="mailto:molina.lucasg@gmail.com">molina.lucasg@gmail.com</a>
+                </div>
+              </div>
+              <div className="contact-info">
+                <div className="icon">
+                  <GitHubIcon />
+                </div>
+                <div className="link">
+                  <a href="https://github.com/LucasMolinag">LucasMolinag</a>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div className="team-member">
+            <img
+              src="/images/josh.jpg" // Replace with Joshua's image source
+              className="team-member-image"
+            />
+            <div>
+              <h3>Joshua Baker</h3>
+              <div className="contact-info">
+                <div className="icon">
+                  <EmailIcon />
+                </div>
+                <div className="email-info">
+                  <a href="mailto:joshuadfbaker@gmail.com">joshuadfbaker@gmail.com</a>
+                </div>
+              </div>
+              <div className="contact-info">
+                <div className="icon">
+                  <GitHubIcon />
+                </div>
+                <div className="link">
+                  <a href="https://github.com/JBakesale">JBakesale</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="team-member">
             <img
               src="ahmad-image.jpg" // Replace with Ahmad's image source
               className="team-member-image"
             />
             <div>
-              <h3>Ahmad Daadaa</h3>
-              <p>Email: <a href="mailto:ahmad@example.com">ahmad@example.com</a></p>
-            </div>
-          </div>
-          <div className="team-member">
-            <img
-              src="joshua-image.jpg" // Replace with Joshua's image source
-              className="team-member-image"
-            />
-            <div>
-              <h3>Joshua Baker</h3>
-              <p>Email: <a href="mailto:joshua@example.com">joshua@example.com</a></p>
-            </div>
-          </div>
-          <div className="team-member">
-            <img
-              src="lucas-image.jpg" // Replace with Lucas's image source
-              className="team-member-image"
-            />
-            <div>
-              <h3>Lucas Molina</h3>
-              <p>Email: <a href="mailto:lucas@example.com">lucas@example.com</a></p>
+            <h3>Ahmed Daadaa</h3>
+              <div className="contact-info">
+                <div className="icon">
+                  <EmailIcon />
+                </div>
+                <div className="email-info">
+                  <a href="mailto:google.com">ahmad@example.com</a>
+                </div>
+              </div>
+              <div className="contact-info">
+                <div className="icon">
+                  <GitHubIcon />
+                </div>
+                <div className="link">
+                  <a href="https://github.com/ahmad">example user</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

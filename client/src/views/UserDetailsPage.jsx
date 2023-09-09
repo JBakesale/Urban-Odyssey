@@ -5,7 +5,7 @@ import '../styles/UserDetailsPage.scss'; // Import the CSS file for UserDetailsP
 const UserDetailsPage = () => {
   // Sample user object
   const user = {
-    profilePicture: '',
+    profilePicture: 'images/poncedeleon.jpg',
     username: 'Ponce De Leon',
     email: 'fountain@youth.com',
     completedAdventures: 10,

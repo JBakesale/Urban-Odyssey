@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/UserDetailsPage.scss';
+import Avatar from "@mui/material/Avatar"
 
 const UserDetails = ({ user }) => {
   return (
     <div className="user-details">
       <div className="user-info">
-        <img src={user.profilePicture} className="user-avatar" />
+        <Avatar src={user.profilePicture} className="user-avatar" sx={{ width: 65, height: 65 }} />
         <div className="user-text">
           <h2>{user.username}</h2>
           <p>Email: {user.email}</p>

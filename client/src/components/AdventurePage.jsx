@@ -36,7 +36,9 @@ function AdventurePage() {
         <div className="adventure-page-container">
           <h1>{adventure.adventure_name}</h1>
           <p>Tag: {adventure.adventure_tag}</p>
-          <p>Adventure Description: <br/> {adventure.description}</p>
+          <p>
+            Adventure Description: <br /> {adventure.adventure_description}
+          </p>
           <p>Difficulty: {adventure.difficulty}</p>
           <button onClick={onClickStart}>Start Adventure!</button>
         </div>

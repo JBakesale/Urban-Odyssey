@@ -1,7 +1,6 @@
 /* Navbar.scss */
 .navbar {
   background-color: #ff7f50;
-  height: 100px;
 
   .navbar-brand {
     color: #fff1e6;
@@ -11,9 +10,7 @@
 
   .logo {
     width: 150px;
-    height: auto;
-    max-height: 100%;
-    position: absolute;
+    max-height: 100px;
     top: 0;
   }
 }

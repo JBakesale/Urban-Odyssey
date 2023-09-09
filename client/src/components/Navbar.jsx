@@ -7,7 +7,7 @@ import { useUserLocation } from '../providers/UserLocationContext';
 function Navbar() {
   // State to track the user's authentication status, latitude, and longitude
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
+  const [username, setUsername] = useState('');
   const { userLocation, setUserLocation } = useUserLocation();
 
   // Function to handle login
@@ -17,7 +17,7 @@ function Navbar() {
     // If authentication is successful, set isLoggedIn to true, setUserEmail with the user's email,
     // and retrieve the user's location.
     setIsLoggedIn(true);
-    setUserEmail('user1@example.com');
+    setUsername('Ponce de Leon');
 
     // Retrieve the user's location using geolocation API
     if ('geolocation' in navigator) {
@@ -38,7 +38,7 @@ function Navbar() {
     // Simulate a logout action (you should replace this with actual logout logic)
     // If the user logs out, set isLoggedIn to false, clear the userEmail, and userLocation.
     setIsLoggedIn(false);
-    setUserEmail('');
+    setUsername('');
     setUserLocation(null);
   };
 
@@ -48,17 +48,6 @@ function Navbar() {
         <a className="navbar-brand" href="/">
           <img src={logo} alt="Logo" className="logo" />
         </a>
-        {/* Display "Logged in as" to the left of the navigation list */}
-        {isLoggedIn && (
-          <span className="navbar-text">
-            Logged in as: {userEmail}
-            {userLocation && ( // Display latitude and longitude if available
-              <span className="ml-2">
-                Location: {userLocation.lat.toFixed(6)}, {userLocation.lng.toFixed(6)}
-              </span>
-            )}
-          </span>
-        )}
         <button
           className="navbar-toggler"
           type="button"
@@ -73,16 +62,6 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/user-details">
-                Account
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="/about">
                 About
               </a>
@@ -94,12 +73,19 @@ function Navbar() {
             </li>
             {/* Conditionally render login/logout */}
             {isLoggedIn ? (
-              <li className="nav-item">
-                <button className="btn btn-link nav-link" onClick={handleLogout}>
-                  Logout
-                </button>
-              </li>
-            ) : (
+                <>
+                <li className="nav-item">
+                  <a className="nav-link" href="/user-details">
+                    User
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <button className="btn btn-link nav-link" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+                ) : (
               <li className="nav-item">
                 <button className="btn btn-link nav-link" onClick={handleLogin}>
                   Login

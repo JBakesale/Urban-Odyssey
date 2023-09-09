@@ -6,8 +6,8 @@ const UserDetailsPage = () => {
   // Sample user object
   const user = {
     profilePicture: '',
-    username: 'ColdRamen',
-    email: 'ramen@example.com',
+    username: 'Ponce De Leon',
+    email: 'fountain@youth.com',
     completedAdventures: 10,
     level: '5',
   };

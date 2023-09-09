@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/Navbar.scss'; // Import the SCSS file
+import logo from "../images/logo_transparent.png"
 import { useUserLocation } from '../providers/UserLocationContext';
+
 
 function Navbar() {
   // State to track the user's authentication status, latitude, and longitude
@@ -44,7 +46,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
         <a className="navbar-brand" href="/">
-          Urban Odyssey
+          <img src={logo} alt="Logo" className="logo" />
         </a>
         {/* Display "Logged in as" to the left of the navigation list */}
         {isLoggedIn && (

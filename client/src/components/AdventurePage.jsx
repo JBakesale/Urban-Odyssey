@@ -40,7 +40,7 @@ function AdventurePage() {
           <button onClick={onClickStart}>Start Adventure!</button>
         </div>
       ) : (
-        <RunAdventure adventureId={adventure.id} />
+        <RunAdventure adventure={adventure} />
       )}
     </div>
   );

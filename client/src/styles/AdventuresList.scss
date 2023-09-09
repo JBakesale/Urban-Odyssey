@@ -1,9 +1,46 @@
-/* Style for the adventures list container */
 .adventures-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap as needed */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  margin: 20px 0; /* Add top and bottom margins */
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black;
+  background-image: url("../../public/images/quest-board.png");
+  background-size: cover; /* Make the background image responsive */
+  background-position: center; /* Center the background image */
+  color: #ffffff;
+  padding: 5%;
+}
+
+.adventure-item {
+  border: 2px solid #8b5f35;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.adventure-title {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.adventure-title:hover {
+  color: #ec9430;
+}
+
+.adventure-description {
+  font-size: 14px;
+}
+
+.adventure-button {
+  background-color: #8b5f35;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.adventure-button:hover {
+  background-color: #ec9430;
 }

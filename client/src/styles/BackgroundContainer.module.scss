@@ -1,26 +1,12 @@
-/* Custom Container styles */
+
 .custom-background-container {
   position: relative;
   width: 100%;
-  height: 400px; 
+  height: 400px;
   overflow: hidden;
+  background-color: #5a3a24; /* A dark, medieval-style background color */
 }
 
-/* Custom Background image styles */
-.custom-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../../public/vancouver.jpg'); 
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9; 
-  z-index: -1;
-}
-
-/* Custom Container content styles */
 .custom-container {
   position: relative;
   z-index: 1;
@@ -29,15 +15,18 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-image: url("../../public/images/tavern.png");
+  background-size: cover; /* Make the background image responsive */
+  background-position: center; /* Center the background image */
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
 }
 
-/* Custom Title styles with text stroke (border around letters) and text shadow */
 .custom-title {
   font-size: 36px;
-  color: #f4f5ae;
-  -webkit-text-stroke: 2px #ec9430; 
-  text-shadow: 5px 5px 5px rgba(17, 18, 18, 0.9);
+  font-family: 'Helvetica Neue', sans-serif; 
+  color: white;
+  background-color: rgba(51, 51, 51, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
-
-
-

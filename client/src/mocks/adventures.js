@@ -6,6 +6,7 @@ const adventures = [
     imageUrl: 'https://th.bing.com/th/id/OIP.GDW4NiEmbTNvLa9eQoCGCQHaE6?pid=ImgDet&rs=1', 
     description: 'Explore the stunning landscapes of Vancouver on this scenic hike.',
     difficulty: 'Moderate',
+    markerUrl: 'https://www.pngall.com/wp-content/uploads/2018/05/Hiking-PNG-Images.png',
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const adventures = [
     imageUrl: 'https://www.insidevancouver.ca/wp-content/uploads/2019/09/07012_201709_DevinManky_Grouse-MountainBikeMountain-BikingSummer-664x443.jpg', 
     description: 'Experience adrenaline-pumping mountain biking trails near Vancouver.',
     difficulty: 'Challenging',
+    markerUrl: 'https://imagensemoldes.com.br/wp-content/uploads/2020/09/Desenho-Ciclista-Bike-PNG.png',
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const adventures = [
     imageUrl: 'https://th.bing.com/th/id/R.8c19d0b9e798499bb05b2ba72c9a1a47?rik=CswC3v%2fvu238tw&riu=http%3a%2f%2fwww.realadventures.com%2flistingimages%2f1021%2f1021299%2fl_1021299h.jpg&ehk=8q9TPGbM8DEEzMrWUCK8Tu%2bW%2f2LaSq6t9qZZLGTFGz4%3d&risl=&pid=ImgRaw&r=0', 
     description: 'Kayak through the pristine waters of Vancouver Island.',
     difficulty: 'Easy',
+    markerUrl: 'https://cdni.iconscout.com/illustration/premium/thumb/kayaking-3985312-3333872.png', 
   },
 ];
 

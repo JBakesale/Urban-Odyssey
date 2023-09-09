@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/RunAdventure.scss";
+import WarningModal from "./WarningModal";
 
 function RunAdventure({ adventure }) {
   const { adventure_name, adventure_image, difficulty } = adventure;
@@ -18,6 +19,27 @@ function RunAdventure({ adventure }) {
       description: "Do 10 squats to scare off the Troll by the Mermaid statue.",
       clues: [],
     },
+    {
+      stepNumber: 3,
+      title: "Grocery run at local supermarket",
+      description:
+        "Be sure to carefully explore the produce section for a spear in the mint.",
+      clues: [],
+    },
+    {
+      stepNumber: 4,
+      title: "Cardio Challenge",
+      description:
+        "Make your way at a brisk walk to the local park. You make it in under 10 minutes if you hurry!",
+      clues: [],
+    },
+    {
+      stepNumber: 5,
+      title: "Burp! eeeees",
+      description:
+        "The troll is hungry, better fight back with some compound dynamic movement! Trouble wont know what hit it!",
+      clues: [],
+    },
   ];
 
   const [progress, setProgress] = useState({
@@ -27,6 +49,7 @@ function RunAdventure({ adventure }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
   const [adventureComplete, setAdventureComplete] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
 
   const handleStepComplete = (stepNumber) => {
     if (!completedSteps.includes(stepNumber)) {
@@ -34,9 +57,15 @@ function RunAdventure({ adventure }) {
     }
     if (completedSteps.length + 1 === progress.total) {
       setAdventureComplete(true);
+    } else {
+      setShowWarning(true);
     }
     setCurrentStep(currentStep + 1);
     updateProgress();
+  };
+
+  const closeWarning = () => {
+    setShowWarning(false);
   };
 
   const updateProgress = () => {
@@ -52,10 +81,6 @@ function RunAdventure({ adventure }) {
     setCurrentStep(0);
     setCompletedSteps([]);
     setAdventureComplete(false);
-  };
-
-  const showAlert = () => {
-    alert(`Please confirm step ${currentStep + 1} is complete`);
   };
 
   return (
@@ -97,6 +122,13 @@ function RunAdventure({ adventure }) {
             </div>
           </div>
 
+          {showWarning && (
+            <WarningModal
+              message={`Please confirm step ${currentStep} is complete!`}
+              onClose={closeWarning}
+            />
+          )}
+
           <div className="step-container">
             <div className="step">
               <h2 className="step-title">
@@ -108,8 +140,11 @@ function RunAdventure({ adventure }) {
               <button
                 className="complete-button"
                 onClick={() => {
-                  showAlert();
-                  handleStepComplete(adventure_steps[currentStep].stepNumber);
+                  if (showWarning) {
+                    setShowWarning(true);
+                  } else {
+                    handleStepComplete(adventure_steps[currentStep].stepNumber);
+                  }
                 }}
               >
                 Step Complete

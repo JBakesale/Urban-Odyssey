@@ -9,7 +9,7 @@ const UserDetails = ({ user }) => {
         <Avatar src={user.profilePicture} className="user-avatar" sx={{ width: 65, height: 65 }} />
         <div className="user-text">
           <h2>{user.username}</h2>
-          <p>Email: {user.email}</p>
+          <p>{user.email}</p>
         </div>
       </div>
       <div className="user-stats">

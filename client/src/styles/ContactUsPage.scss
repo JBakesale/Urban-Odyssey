@@ -5,12 +5,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Use min-height to ensure background color covers the entire page */
+  min-height: 90vh; /* Use min-height to ensure background color covers the entire page */
   background-color: #1a1a1a; /* Dark background color */
+  background-image: url("../../public/images/contact.jpg");
   color: #fff; /* Text color */
   padding: 20px; /* Add padding for mobile screens */
 
   .contact-us-content {
+      background-color: #333333;
+      border: 2px solid #4d4d4d;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     text-align: center;
     max-width: 800px; /* Set a maximum width to prevent text from stretching too wide */
 
@@ -19,11 +27,26 @@
       margin-bottom: 20px;
     }
 
-    p {
+    .contact-text {
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 5rem; /* Add margin to create distance */
     }
 
+    .email-info {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon {
+      margin-right: 15px;
+    }
+    
     .team-members {
       display: flex;
       flex-direction: column;

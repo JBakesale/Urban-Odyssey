@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/RunAdventure.scss";
 import WarningModal from "./WarningModal";
-import MapsApi from "./MapsApi"
+// import MapsApi from "./MapsApi"
 
 function RunAdventure({ adventure }) {
-  const { adventure_name, adventure_image, difficulty } = adventure;
+  const { adventure_name } = adventure;
 
   const adventure_steps = [
     {
@@ -53,17 +53,7 @@ function RunAdventure({ adventure }) {
   const [showWarning, setShowWarning] = useState(false);
 
   const handleStepComplete = (stepNumber) => {
-    if (!completedSteps.includes(stepNumber)) {
-      setCompletedSteps([...completedSteps, stepNumber]);
-    }
-    if (completedSteps.length + 1 === progress.total) {
-      setAdventureComplete(true);
-    } else {
-      setShowWarning(true);
-    }
-    setCurrentStep(currentStep + 1);
-    updateProgress();
-  };
+
 
   const closeWarning = () => {
     setShowWarning(false);
@@ -93,7 +83,7 @@ function RunAdventure({ adventure }) {
 
       {/* Display Google Maps
       <div id="map" className="map"></div> */}
-      <MapsApi/>
+      {/* <MapsApi/> */}
 
       {adventureComplete ? (
         <div className="adventure-complete">
@@ -110,7 +100,6 @@ function RunAdventure({ adventure }) {
         </div>
       ) : (
         <>
-          <h3 className="section-header">Let the Adventure Begin!</h3>
           <div className="progress-container">
             <h3 className="progress-subheader">Adventure Progress</h3>
             <div className="progress-bar">
@@ -131,6 +120,7 @@ function RunAdventure({ adventure }) {
             <WarningModal
               message={`Please confirm step ${currentStep} is complete!`}
               onClose={closeWarning}
+              onBack={}
             />
           )}
 

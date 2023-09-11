@@ -14,14 +14,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import '../styles/Navbar.scss';
-import { useUserLocation } from '../providers/UserLocationContext';
+// import { useUserLocation } from '../providers/UserLocationContext';
 
 const pages = ['Profile', 'About Us', 'Contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { userLocation, setUserLocation } = useUserLocation();
+  // const { userLocation, setUserLocation } = useUserLocation();
   
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -33,21 +33,20 @@ function ResponsiveAppBar() {
 
   const handleLogin = () => {
     setIsLoggedIn(true);
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        setUserLocation({ lat: latitude, lng: longitude });
+    // if ('geolocation' in navigator) {
+      // navigator.geolocation.getCurrentPosition(function (position) {
+      //   const latitude = position.coords.latitude;
+      //   const longitude = position.coords.longitude;
+      //   setUserLocation({ lat: latitude, lng: longitude });
         
-      });
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
+      // });
+    // } else {
+    //   console.error('Geolocation is not supported by this browser.');
+    // }
   };
-  console.log("inside geolocation function !!!!!!!", userLocation);
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUserLocation(null);
+    // setUserLocation(null);
   };
 
   return (

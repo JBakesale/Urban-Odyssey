@@ -62,31 +62,6 @@ const ContactUsPage = () => {
               </div>
             </div>
           </div>
-          <div className="team-member">
-            <img
-              src="/images/ahmad.png" 
-              className="team-member-image"
-            />
-            <div>
-            <h3>Ahmad Daadaa</h3>
-              <div className="contact-info">
-                <div className="icon">
-                  <EmailIcon />
-                </div>
-                <div className="email-info">
-                  <a href="mailto:ahmaddaadaa@gmail.com">ahmaddaadaa@gmail.com</a>
-                </div>
-              </div>
-              <div className="contact-info">
-                <div className="icon">
-                  <GitHubIcon />
-                </div>
-                <div className="link">
-                  <a href="https://github.com/ahmaddaadaa">ahmaddaadaa</a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

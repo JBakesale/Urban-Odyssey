@@ -1,52 +1,75 @@
-import React, { useEffect, useState } from 'react';
-import adventures from '../mocks/adventures';
+import React, { useContext, useEffect, useState } from 'react';
 import { useUserLocation } from '../providers/UserLocationContext';
+import { LocationsContext } from "../providers/LocationsProvider";
+import { useAdventureId } from '../providers/AdventureProvider';
 
 const GoogleMap = () => {
+  const { adventureId } = useAdventureId();
   const { userLocation } = useUserLocation();
   const [map, setMap] = useState(null);
+  const { locations } = useContext(LocationsContext);
+  const [directionsRenderer, setDirectionsRenderer] = useState(null);
+
+  function getLocationCoordinatesById(id) {
+    const location = locations.find((location) => location.id === id);
+    if (location) {
+      return { lat: location.latitude, lng: location.longitude };
+    } else {
+      return null;
+    }
+  }
 
   useEffect(() => {
-    // Create a function to initialize the map
+    // function to initialize the map
     async function initMap() {
       return new Promise((resolve) => {
         if (typeof window.google !== 'undefined') {
-          // Define your Map ID
+          // Define Map ID
           const mapId = 'ad71aaff0d4bbd6b';
 
-          // Create a new map centered on the first location
+          // Create a new map centered on the first location if available
+          const initialLocation = locations.length > 0 ? locations[0] : null;
+
+          // Create a new map instance
           const mapInstance = new window.google.maps.Map(document.getElementById('map'), {
             zoom: 13,
-            center: { lat: adventures[0].latitude, lng: adventures[0].longitude }, // Center on the first location
-
-            // Add the Map ID to the map's options
+            center: initialLocation
+              ? { lat: initialLocation.latitude, lng: initialLocation.longitude }
+              : { lat: 0, lng: 0 }, // Default coordinates if no locations are available
             mapId: mapId,
           });
 
           setMap(mapInstance);
 
-          // Create markers for each adventure location using .map
-          const markers = adventures.map((adventure) => {
-            return new window.google.maps.Marker({
-              position: { lat: adventure.latitude, lng: adventure.longitude },
-              map: mapInstance,
-              title: adventure.description, // Use the adventure description as the title
-              // No custom icon property, so it will use the default marker icon
-            });
-          });
-
           // Display the user's location on the map if available
           if (userLocation) {
             const userMarker = new window.google.maps.Marker({
-              position: userLocation, // Use the user's location as the marker position
+              position: userLocation,
               map: mapInstance,
               title: 'Your Location',
               icon: {
                 url: 'https://imagensemoldes.com.br/wp-content/uploads/2020/05/Cartoon-Menino-Safari-PNG.png',
-                scaledSize: new window.google.maps.Size(40, 40), // Adjust the size as needed
+                scaledSize: new window.google.maps.Size(40, 40),
               },
             });
           }
+
+          // Create markers for each location using .map if locations are available
+          if (locations.length > 0) {
+            const markers = locations.map((location) => {
+              return new window.google.maps.Marker({
+                position: { lat: location.latitude, lng: location.longitude },
+                map: mapInstance,
+                title: location.location_name,
+              });
+            });
+          }
+
+          // Create DirectionsRenderer for showing the route
+          const directionsRenderer = new window.google.maps.DirectionsRenderer({
+            map: mapInstance,
+          });
+          setDirectionsRenderer(directionsRenderer);
 
           // Map initialization is complete, resolve the Promise
           resolve();
@@ -60,7 +83,47 @@ const GoogleMap = () => {
 
     // Call the initMap function to initialize the map
     initMap();
-  }, [userLocation]); // Include userLocation in the dependency array to update the map when it changes
+  }, [userLocation, locations]);
+
+  // Function to calculate and display the route
+  function displayRoute(userLocation, destinationLocation) {
+    if (!userLocation || !destinationLocation) {
+      return;
+    }
+
+    const directionsService = new window.google.maps.DirectionsService();
+    directionsService.route(
+      {
+        origin: userLocation,
+        destination: destinationLocation,
+        travelMode: 'WALKING',
+      },
+      (response, status) => {
+        if (status === 'OK') {
+          if (directionsRenderer) {
+            directionsRenderer.setDirections(response);
+          }
+        } else {
+          console.error(`Directions request failed: ${status}`);
+        }
+      }
+    );
+  }
+
+  useEffect(() => {
+    // Check if adventureId is not null and userLocation is available
+    if (adventureId !== null && userLocation) {
+      const destinationLocation = getLocationCoordinatesById(adventureId);
+      if (destinationLocation) {
+        displayRoute(userLocation, destinationLocation);
+      }
+    } else {
+      // Clear directions if adventureId is null or userLocation is not available
+      if (directionsRenderer) {
+        directionsRenderer.setDirections({ routes: [] });
+      }
+    }
+  }, [adventureId, userLocation, directionsRenderer]);
 
   return <div id="map" style={{ height: '500px', width: '100%' }}></div>;
 };

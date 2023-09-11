@@ -10,22 +10,28 @@ import SignUp from './views/SignUp';
 import Login from './views/Login';
 import AdventurePage from './components/AdventurePage';
 import { UserLocationProvider } from './providers/UserLocationContext';
+import { AdventureProvider } from "./providers/AdventureProvider";
+import { LocationsProvider } from "./providers/LocationsProvider";
 
 
 
 function App() {
   return (
     <UserLocationProvider>
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/user-details" element={<UserDetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact-us" element={<ContactUsPage />} />
-        <Route path="/adventure/:id" element={<AdventurePage />} />
-      </Routes>
-    </Router>
+      <AdventureProvider>
+        <LocationsProvider>
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/user-details" element={<UserDetailsPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact-us" element={<ContactUsPage />} />
+              <Route path="/adventure/:id" element={<AdventurePage />} />
+            </Routes>
+          </Router>
+        </LocationsProvider>
+      </AdventureProvider>
     </UserLocationProvider>
   );
 }

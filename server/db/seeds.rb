@@ -14,9 +14,9 @@ Adventure.create(adventure_name: 'Learning Spells', adventure_tag: 'Library', ad
 
 puts "Create Locations"
 Location.destroy_all
-Location.create(location_name: 'VPL', location_tag: 'Library', latitude: 1234567, longitude: 9876543)
-Location.create(location_name: '24/7 Gym', location_tag: 'Gym', latitude: 2345678, longitude: 8765432)
-Location.create(location_name: 'Safeway', location_tag: 'Grocery Store', latitude: 3456789, longitude: 7654321)
+Location.create(location_name: 'VPL', location_tag: 'Library', latitude: 49.2827, longitude: -123.1207)
+Location.create(location_name: '24/7 Gym', location_tag: 'Gym', latitude: 49.2827, longitude: -123.1250)
+Location.create(location_name: 'Safeway', location_tag: 'Grocery Store', latitude: 49.2827, longitude: -123.1150)
 
 puts "Create Adventures completed by users"
 

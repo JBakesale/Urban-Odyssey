@@ -53,11 +53,27 @@ function RunAdventure({ adventure }) {
   const [showWarning, setShowWarning] = useState(false);
 
   const handleStepComplete = (stepNumber) => {
+    if (!completedSteps.includes(stepNumber)) {
+      setShowWarning(true);
+    }
+  };
 
+  const handleWarningModalDone = () => {
+    setShowWarning(false);
+    setCurrentStep(currentStep + 1);
+    setCompletedSteps([...completedSteps, currentStep]);
+    updateProgress();
 
-  const closeWarning = () => {
+    if (completedSteps.length + 1 === progress.total) {
+      setAdventureComplete(true);
+    }
+  };
+
+  const handleWarningModalClose = () => {
     setShowWarning(false);
   };
+
+  // implement check to see if stepNumber is already in completed steps?
 
   const updateProgress = () => {
     const newProgress = {
@@ -77,9 +93,11 @@ function RunAdventure({ adventure }) {
   return (
     <div className="run-adventure-page">
       <h1 className="adventure-header">{adventure_name}</h1>
-      <img src={process.env.PUBLIC_URL + '/images/stanley_park.png'} alt="Adventure Image" className='adventure_image'/>
-
-
+      <img
+        src={process.env.PUBLIC_URL + "/images/stanley_park.png"}
+        alt="Adventure Image"
+        className="adventure_image"
+      />
 
       {/* Display Google Maps
       <div id="map" className="map"></div> */}
@@ -119,8 +137,8 @@ function RunAdventure({ adventure }) {
           {showWarning && (
             <WarningModal
               message={`Please confirm step ${currentStep} is complete!`}
-              onClose={closeWarning}
-              onBack={}
+              onClose={handleWarningModalClose}
+              onDone={handleWarningModalDone}
             />
           )}
 
@@ -133,18 +151,20 @@ function RunAdventure({ adventure }) {
                 {adventure_steps[currentStep].description}
               </p>
               <div className="button-container">
-              <button
-                className="complete-button"
-                onClick={() => {
-                  if (showWarning) {
-                    setShowWarning(true);
-                  } else {
-                    handleStepComplete(adventure_steps[currentStep].stepNumber);
-                  }
-                }}
-              >
-                Step Complete
-              </button>
+                <button
+                  className="complete-button"
+                  onClick={() => {
+                    if (showWarning) {
+                      setShowWarning(true);
+                    } else {
+                      handleStepComplete(
+                        adventure_steps[currentStep].stepNumber
+                      );
+                    }
+                  }}
+                >
+                  Step Complete
+                </button>
               </div>
             </div>
           </div>

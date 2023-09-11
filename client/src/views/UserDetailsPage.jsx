@@ -18,8 +18,8 @@ const UserDetailsPage = () => {
         <h1>User Profile</h1>
       </header>
       <UserDetails user={user} /> {/* Render UserDetails component */}
-      <div className="additional-content">
-        {/* Add any additional content you want here */}
+      <div className="achievements">
+        {/* Add any achievements content you want here */}
       </div>
       <footer className="footer">
       </footer>

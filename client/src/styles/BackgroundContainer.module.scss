@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #DDC3A5, 0.5;
   background-image: url("../../public/images/tavern.png");
   background-size: cover; /* Make the background image responsive */
   background-position: center; /* Center the background image */
@@ -27,6 +27,12 @@
   font-size: 36px;
   font-family: 'Helvetica Neue', sans-serif; 
   color: black;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(221, 195, 165, 0.4);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  border-radius: 20px;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }

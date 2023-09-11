@@ -136,7 +136,7 @@ function RunAdventure({ adventure }) {
 
           {showWarning && (
             <WarningModal
-              message={`Please confirm step ${currentStep} is complete!`}
+              message={`Please confirm step ${currentStep + 1} is complete!`}
               onClose={handleWarningModalClose}
               onDone={handleWarningModalDone}
             />

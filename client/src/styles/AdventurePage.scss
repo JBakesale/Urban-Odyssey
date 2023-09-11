@@ -61,7 +61,7 @@ $button-color: #ffd700; // Gold
     margin-bottom: 5%;
 
     &:hover {
-      background-color: darken($button-color, 10%);
+      background-color: darken(#0056b3, 10%);
     }
   }
 }

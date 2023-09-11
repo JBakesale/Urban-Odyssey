@@ -9,8 +9,7 @@ function BackgroundContainer() {
       
       {/* Container content */}
       <div className={styles['custom-container']}>
-        <h1 className={styles['custom-title']}><b>Have fun. Adventure. Discover.</b>
-        <p/>
+        <h1 className={styles['custom-title']}>
           <b>Your Odyssey, Our App.</b></h1>
       </div>
     </div>

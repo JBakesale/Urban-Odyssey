@@ -92,10 +92,10 @@ function RunAdventure({ adventure }) {
 
   return (
     <div className="run-adventure-page">
-      <h1 className="adventure-header">{adventure_name}</h1>
+      <h1 className="adventure-header"><b>{adventure_name}</b></h1>
       <img
         src={process.env.PUBLIC_URL + "/images/stanley_park.png"}
-        alt="Adventure Image"
+        alt="Adventure"
         className="adventure_image"
       />
 
@@ -106,14 +106,19 @@ function RunAdventure({ adventure }) {
       {adventureComplete ? (
         <div className="adventure-complete">
           <p className="adventure-subheader">
-            Congratulations! Adventure Complete!
+            Adventure Complete! Congratulations! 
+          </p>
+          <p className="level-up">
+            You gained <b>10XP</b> points and is now <b>level 5</b>!
           </p>
           <button className="restart-button" onClick={handleAdventureReset}>
             Restart Adventure?
           </button>
           <br />
-          <Link to="/" className="back-button">
+          <Link to="/">
+            <button className="back-button">
             Go Back for more Adventures
+            </button>
           </Link>
         </div>
       ) : (

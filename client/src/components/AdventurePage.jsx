@@ -31,16 +31,19 @@ function AdventurePage() {
   }
 
   return (
-    <div>
+    <div className="adventure-page">
       {!startAdventure ? (
         <div className="adventure-page-container">
+          <div className="title-container">
           <h1>{adventure.adventure_name}</h1>
-          <p>Tag: {adventure.adventure_tag}</p>
+          </div>
           <p>
-            Adventure Description: <br /> {adventure.adventure_description}
+           {adventure.adventure_description}
           </p>
           <p>Difficulty: {adventure.difficulty}</p>
+          <div className="button-container">
           <button onClick={onClickStart}>Start Adventure!</button>
+          </div>
         </div>
       ) : (
         <RunAdventure adventure={adventure} />

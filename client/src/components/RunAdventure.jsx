@@ -86,6 +86,9 @@ function RunAdventure({ adventure }) {
   return (
     <div className="run-adventure-page">
       <h1 className="adventure-header">{adventure_name}</h1>
+      <img src={process.env.PUBLIC_URL + '/images/stanley_park.png'} alt="Adventure Image" className='adventure_image'/>
+
+
 
       {/* Display Google Maps
       <div id="map" className="map"></div> */}
@@ -137,6 +140,7 @@ function RunAdventure({ adventure }) {
               <p className="step-description">
                 {adventure_steps[currentStep].description}
               </p>
+              <div className="button-container">
               <button
                 className="complete-button"
                 onClick={() => {
@@ -149,6 +153,7 @@ function RunAdventure({ adventure }) {
               >
                 Step Complete
               </button>
+              </div>
             </div>
           </div>
         </>

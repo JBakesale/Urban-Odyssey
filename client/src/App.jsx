@@ -8,18 +8,11 @@ import UserDetailsPage from './views/UserDetailsPage';
 import SignUp from './views/SignUp';
 import Login from './views/Login';
 import AdventurePage from './components/AdventurePage';
-import { UserLocationProvider } from './providers/UserLocationContext';
 import ResponsiveAppBar from './components/AppBar';
-import { AdventureProvider } from "./providers/AdventureProvider";
-import { LocationsProvider } from "./providers/LocationsProvider";
-
 
 
 function App() {
   return (
-  <UserLocationProvider>
-    <AdventureProvider>
-      <LocationsProvider>
         <Router>
           <ResponsiveAppBar />
           <Routes>
@@ -30,9 +23,6 @@ function App() {
             <Route path="/adventure/:id" element={<AdventurePage />} />
           </Routes>
         </Router>
-      </LocationsProvider>
-    </AdventureProvider>
-   </UserLocationProvider>
 
   );
 }

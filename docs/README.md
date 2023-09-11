@@ -41,6 +41,3 @@
 ## Database creation & initialization
 - `rake db:create`
 - `rake db:migrate`
-
-## ENV variables
-We need to set our ENV still before starting Rails Server

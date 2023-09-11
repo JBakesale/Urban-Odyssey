@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/RunAdventure.scss";
 import WarningModal from "./WarningModal";
+import MapsApi from "./MapsApi"
 
 function RunAdventure({ adventure }) {
   const { adventure_name, adventure_image, difficulty } = adventure;
@@ -92,6 +93,7 @@ function RunAdventure({ adventure }) {
 
       {/* Display Google Maps
       <div id="map" className="map"></div> */}
+      <MapsApi/>
 
       {adventureComplete ? (
         <div className="adventure-complete">

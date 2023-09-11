@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,9 +20,9 @@ const pages = ['Profile', 'About Us', 'Contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { userLocation, setUserLocation } = useUserLocation();
-
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -32,22 +32,20 @@ function ResponsiveAppBar() {
   };
 
   const handleLogin = () => {
-    // Implement your login logic here, e.g., setting the isLoggedIn state to true.
     setIsLoggedIn(true);
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         setUserLocation({ lat: latitude, lng: longitude });
+        
       });
     } else {
-      // Geolocation is not available in the user's browser
       console.error('Geolocation is not supported by this browser.');
-    };
+    }
   };
-
+  console.log("inside geolocation function !!!!!!!", userLocation);
   const handleLogout = () => {
-    // Implement your logout logic here, e.g., setting the isLoggedIn state to false.
     setIsLoggedIn(false);
     setUserLocation(null);
   };
@@ -88,7 +86,6 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {/* Use Link for menu items */}
                   <Link to={`/${page.toLowerCase().replace(' ', '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <Typography textAlign="center">{page}</Typography>
                   </Link>
@@ -98,7 +95,6 @@ function ResponsiveAppBar() {
           </Box>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            {/* Use Link for the logo */}
             <img
               src="images/logo_transparent.png"
               alt="Logo"
@@ -118,7 +114,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                component={Link} // Use Link component for menu items
+                component={Link}
                 to={`/${page.toLowerCase().replace(' ', '-')}`}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -128,13 +124,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {isLoggedIn ? ( // Render logout button when logged in
+            {isLoggedIn ? (
               <Tooltip title="Logout">
                 <IconButton onClick={handleLogout} sx={{ p: 0, marginRight: 4.5, width: 25, height: 25 }}>
                   <Avatar alt="User Avatar" src="images/poncedeleon.jpg" />
                 </IconButton>
               </Tooltip>
-            ) : ( // Render login button when not logged in
+            ) : (
               <Button color="inherit" onClick={handleLogin}>
                 Login
               </Button>

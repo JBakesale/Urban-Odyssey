@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/AdventurePage.scss";
 import RunAdventure from "./RunAdventure";
+import { useAdventureId } from "../providers/AdventureProvider"; 
 
 function AdventurePage() {
   const { id } = useParams();
   const [adventure, setAdventure] = useState(null);
   const [startAdventure, setStartAdventure] = useState(false);
+  const { adventureId, setAdventureId } = useAdventureId(); 
+
 
   const onClickStart = () => {
     setStartAdventure((prev) => !prev);
@@ -20,6 +23,7 @@ function AdventurePage() {
       .then((response) => {
         console.log("Adv Data:", response.data);
         setAdventure(response.data);
+        setAdventureId(response.data.id);
       })
       .catch((error) => {
         console.log(error);

@@ -64,17 +64,17 @@ const ContactUsPage = () => {
           </div>
           <div className="team-member">
             <img
-              src="ahmad-image.jpg" // Replace with Ahmad's image source
+              src="/images/ahmad.png" 
               className="team-member-image"
             />
             <div>
-            <h3>Ahmed Daadaa</h3>
+            <h3>Ahmad Daadaa</h3>
               <div className="contact-info">
                 <div className="icon">
                   <EmailIcon />
                 </div>
                 <div className="email-info">
-                  <a href="mailto:google.com">ahmad@example.com</a>
+                  <a href="mailto:ahmaddaadaa@gmail.com">ahmaddaadaa@gmail.com</a>
                 </div>
               </div>
               <div className="contact-info">
@@ -82,7 +82,7 @@ const ContactUsPage = () => {
                   <GitHubIcon />
                 </div>
                 <div className="link">
-                  <a href="https://github.com/ahmad">example user</a>
+                  <a href="https://github.com/ahmaddaadaa">ahmaddaadaa</a>
                 </div>
               </div>
             </div>

@@ -14,12 +14,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import '../styles/Navbar.scss';
+import { useUserLocation } from '../providers/UserLocationContext';
 
 const pages = ['Profile', 'About Us', 'Contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const { userLocation, setUserLocation } = useUserLocation();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -32,15 +34,26 @@ function ResponsiveAppBar() {
   const handleLogin = () => {
     // Implement your login logic here, e.g., setting the isLoggedIn state to true.
     setIsLoggedIn(true);
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        setUserLocation({ lat: latitude, lng: longitude });
+      });
+    } else {
+      // Geolocation is not available in the user's browser
+      console.error('Geolocation is not supported by this browser.');
+    };
   };
 
   const handleLogout = () => {
     // Implement your logout logic here, e.g., setting the isLoggedIn state to false.
     setIsLoggedIn(false);
+    setUserLocation(null);
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'grey' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#E0A96D' }}>
       <Container maxWidth="xl">
         <Toolbar className="navbarbox" disableGutters>
 
@@ -90,7 +103,6 @@ function ResponsiveAppBar() {
               src="images/logo_transparent.png"
               alt="Logo"
               style={{
-                display: 'flex',
                 justifyContent: 'center',
                 marginRight: '2px',
                 display: { xs: 'none', md: 'flex' },

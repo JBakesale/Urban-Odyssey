@@ -5,21 +5,47 @@ $background-color: #f5e1da; // Light Beige
 $text-color: #000; // Black
 $button-color: #ffd700; // Gold
 
+.adventure-page {
+  background-color: #201E20;
+  min-height: 100vh;
+  padding: 16px;
+}
 
 .adventure-page-container {
-  width: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  background-color: $background-color;
-  color: $text-color;
-  padding: 20px;
-  border: 2px solid $primary-color;
+  margin-top: 10%;
+  background-color: #DDC3A5;
+  color: black;
+  border: 2px solid #4d4d4d;
+  border-radius: 20px;
   
+  .title-container {
+    display: flex;
+    width: 80%;
+    background-color: #E0A96D;
+    border-radius: 20px;
+    text-align: center;
+    margin: 10%;
+    padding: 2%;
+  }
+
   h1 {
-    color: $primary-color;
+    color: black;
   }
 
   p {
-    font-size: 18px;
+    font-size: 26px;
+    padding: 5%;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
   }
 
   button {
@@ -30,6 +56,8 @@ $button-color: #ffd700; // Gold
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5%;
 
     &:hover {
       background-color: darken($button-color, 10%);

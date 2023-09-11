@@ -6,7 +6,7 @@ const UserDetails = ({ user }) => {
   return (
     <div className="user-details">
       <div className="user-info">
-        <Avatar src={user.profilePicture} className="user-avatar" sx={{ width: 65, height: 65 }} />
+        <Avatar src={user.profilePicture} className="user-avatar" sx={{ width: 100, height: 100 }} />
         <div className="user-text">
           <h2>{user.username}</h2>
           <p>{user.email}</p>

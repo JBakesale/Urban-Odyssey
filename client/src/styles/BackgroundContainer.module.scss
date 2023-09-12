@@ -2,7 +2,7 @@
 .custom-background-container {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 510px;
   overflow: hidden;
   background-color: #5a3a24; /* A dark, medieval-style background color */
 }
@@ -12,8 +12,7 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
   background-color: #DDC3A5, 0.5;
   background-image: url("../../public/images/tavern.png");
@@ -27,7 +26,7 @@
   font-size: 36px;
   font-family: 'Helvetica Neue', sans-serif; 
   color: white;
-  background-color: rgb(221, 195, 165, 0.4);
+  background-color: rgb(224, 169, 109, 0.4);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
   border-radius: 20px;
   padding: 2%;
@@ -35,4 +34,5 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-top: 60px;
 }

@@ -95,16 +95,16 @@ function ResponsiveAppBar() {
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
             <img
-              src="images/logo_transparent.png"
+              src="images/logo_transparent2.png"
               alt="Logo"
               style={{
                 justifyContent: 'center',
-                marginRight: '2px',
+                marginLeft: '20px',
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
-                maxWidth: '100px',
+                maxWidth: '150px',
               }}
             />
           </Link>

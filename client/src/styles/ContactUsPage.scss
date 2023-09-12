@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh; /* Use min-height to ensure background color covers the entire page */
+  min-height: 95vh; /* Use min-height to ensure background color covers the entire page */
   background-color: #1a1a1a; /* Dark background color */
   background-image: url("../../public/images/contact.jpg");
+  background-size: cover;
   color: #fff; /* Text color */
   padding: 20px; /* Add padding for mobile screens */
 
@@ -24,7 +25,7 @@
 
     h1 {
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .contact-text {
@@ -55,7 +56,7 @@
       .team-member {
         display: flex;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 5rem;
 
         .team-member-image {
           width: 100px; /* Adjust the image size */

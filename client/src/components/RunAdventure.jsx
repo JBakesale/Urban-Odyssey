@@ -109,7 +109,7 @@ function RunAdventure({ adventure }) {
             Adventure Complete! Congratulations! 
           </p>
           <p className="level-up">
-            You gained <b>10XP</b> points and is now <b>level 5</b>!
+            You gained <b>10XP</b> points and are now <b>level 5</b>!
           </p>
           <button className="restart-button" onClick={handleAdventureReset}>
             Restart Adventure?

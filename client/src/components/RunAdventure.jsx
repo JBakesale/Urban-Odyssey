@@ -22,23 +22,16 @@ function RunAdventure({ adventure }) {
     },
     {
       stepNumber: 3,
-      title: "Grocery run at local supermarket",
+      title: "Cardio Challenge",
       description:
-        "Be sure to carefully explore the produce section for a spear in the mint.",
+        "Run or walk briskly to 1766 Robson, into the sacred realm known as Safeway",
       clues: [],
     },
     {
       stepNumber: 4,
-      title: "Cardio Challenge",
+      title: "Potion Preparation",
       description:
-        "Make your way at a brisk walk to the local park. You make it in under 10 minutes if you hurry!",
-      clues: [],
-    },
-    {
-      stepNumber: 5,
-      title: "Burp! eeeees",
-      description:
-        "The troll is hungry, better fight back with some compound dynamic movement! Trouble wont know what hit it!",
+        "Explore the produce section for a spear in the mint. This may prove helpful for future herbology potions",
       clues: [],
     },
   ];

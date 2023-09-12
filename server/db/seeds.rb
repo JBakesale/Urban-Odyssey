@@ -9,7 +9,9 @@ User.create(username: 'Ahmad', email: 'ahmad3@example.com', password: 'password3
 puts "Create Adventures"
 Adventure.destroy_all
 Adventure.create(adventure_name: "Stanley Park's Enchanted Grove", 
-adventure_description: "Explore Stanley Park's natural wonders, indigenous art, and scenic vistas. Start at the Totem Poles, stroll around the park, capture unforgetable views, and enjoy a pleasant walk. You may even find some treasure!",
+adventure_description: "Explore Stanley Park's natural wonders, indigenous art, and scenic vistas. Start at the Totem Poles, stroll around the park, capture unforgetable views, and enjoy a pleasant walk. You may even find some treasure!
+
+        Estimated Duration: 60-90mins",
 adventure_tag: 'Park', 
 adventure_steps: [
   {
@@ -61,7 +63,7 @@ adventure_steps: [
 adventure_image: "images/stanley_park.png",
 difficulty: 'Easy')
 Adventure.create(adventure_name: 'Restocking Supplies', adventure_description: "N/A", adventure_tag: 'Grocery Store', adventure_steps: ['Step A', 'Step B', 'Step C'], adventure_image: 'images/supplies.jpg', difficulty: 'Medium')
-Adventure.create(adventure_name: 'Learning Spells', adventure_description: "N/A", adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'], adventure_image: 'images/spells.jpg',difficulty: 'Challenging')
+Adventure.create(adventure_name: 'Learning Spells', adventure_description: "Uncover buried secrets at the Science World primal orb of learning. Journey to the gravity-defying perils of the Hive. Find solace and rejuvenation with an elixir of life in the welcoming realm of Mount Pleasant. Estimated Duration: 3 hours", adventure_tag: 'Library', adventure_steps: ['Step X', 'Step Y', 'Step Z'], adventure_image: 'images/spells.jpg',difficulty: 'Challenging')
 
 puts "Create Locations"
 Location.destroy_all

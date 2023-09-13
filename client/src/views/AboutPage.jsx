@@ -4,7 +4,7 @@ import '../styles/AboutUsPage.scss';
 const AboutUs = () => {
   return (
     <div className="about-page">
-      <img className="about-image" src={"images/about.jpg"} />
+      <img className="about-image" src={"images/about.jpg"} alt="aboutPage"/>
       <div className="about-us-content">
         <h1>About Us</h1>
         <p>

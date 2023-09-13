@@ -16,6 +16,7 @@ const ContactUsPage = () => {
             <img
               src="/images/lucas.jpg" // Replace with Lucas' image source
               className="team-member-image"
+              alt="lucas"
             />
             <div>
             <h3>Lucas Molina</h3>
@@ -41,6 +42,7 @@ const ContactUsPage = () => {
             <img
               src="/images/josh.jpg" // Replace with Joshua's image source
               className="team-member-image"
+              alt="josh"
             />
             <div>
               <h3>Joshua Baker</h3>

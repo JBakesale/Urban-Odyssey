@@ -41,7 +41,10 @@ function AdventurePage() {
           <p>
            {adventure.adventure_description}
           </p>
-          <p>Difficulty: {adventure.difficulty}</p>
+          <div className="difficulty-duration">
+          <p className='difficulty'>Difficulty: {adventure.difficulty}</p>
+          <p>Estimated Duration: {adventure.duration}</p>
+          </div>
           <div className="button-container">
           <button onClick={onClickStart}>Start Adventure!</button>
           </div>

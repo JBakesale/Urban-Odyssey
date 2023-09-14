@@ -11,6 +11,19 @@ $button-color: #ffd700; // Gold
   padding: 16px;
 }
 
+.difficulty-duration {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  align-items: center;
+
+  .difficulty {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+
 .adventure-page-container {
   width: 90%;
   display: flex;
@@ -41,7 +54,7 @@ $button-color: #ffd700; // Gold
   }
 
   p {
-    font-size: 26px;
+    font-size: 25px;
     padding: 5%;
   }
 

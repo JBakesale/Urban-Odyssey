@@ -25,13 +25,14 @@ ActiveRecord::Schema[7.0].define(version: 720230902004255) do
 
   create_table "adventures", force: :cascade do |t|
     t.string "adventure_name"
-    t.string "adventure_description"
     t.string "adventure_tag"
     t.text "adventure_steps"
+    t.string "adventure_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "adventure_image"
     t.text "difficulty"
+    t.text "duration"
   end
 
   create_table "locations", force: :cascade do |t|

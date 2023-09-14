@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import BackgroundContainer from "../components/BackgroundContainer";
 import AdventuresList from "../components/AdventuresList";
 import '../styles/HomePage.scss'
-import axios from "axios";
 
 const HomePage = () => {
 

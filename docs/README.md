@@ -6,10 +6,10 @@ This project is an ongoing endeavor to leverage openAI and Maps API to create lo
 
 ## Screenshots
 
-![HomePage]()
-![warningModal]()
-![aboutUs]()
-![adventureComplete]()
+![HomePage](https://github.com/JBakesale/Urban-Odyssey/blob/josh/cleanup/docs/screenshots/homepage_loggedIn.png)
+![warningModal](https://github.com/JBakesale/Urban-Odyssey/blob/josh/cleanup/docs/screenshots/warningModal.png)
+![aboutUs](https://github.com/JBakesale/Urban-Odyssey/blob/josh/cleanup/docs/screenshots/about_us.png)
+![adventureComplete](https://github.com/JBakesale/Urban-Odyssey/blob/josh/cleanup/docs/screenshots/adventureComplete.png)
 
 ## Getting Started
 ```bash 

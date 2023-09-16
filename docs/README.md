@@ -1,9 +1,43 @@
+# Welcome to Urban Odyssey
+
+![Logo]()
+
+This project is an ongoing endeavor to leverage openAI and Maps API to create location based productivity adventures!
+
+## Screenshots
+
+![HomePage]()
+![warningModal]()
+![aboutUs]()
+![adventureComplete]()
+
 ## Getting Started
-```git clone https://github.com/JBakesale/Urban-Odyssey.git```
+```bash 
+git clone https://github.com/JBakesale/Urban-Odyssey.git
+```
+## Dependencies:
+- Ruby
+- Rails
+- Postgresql
+- Node.js
+- React
+- Axios
+- @react-google-maps/api
+- @mui
+- rack-cors
+
+## Install Dependencies (First time only)
+- Install ruby: `rvm install 3.1.1`
+- Install rails dependencies: `bundle install`
+- Install front-end dependencies: `npm install`
+- Install node dep: `yarn`
 
 
-## Github Workflow Overview
+## Database initialization
+- `rails db:create`
 
+
+## Github Workflow Overview (for contributors)
 `cd Urban-Odyssey`
 - Create new feature branch: 
   - `git checkout -b feature/1-feature-name`
@@ -24,20 +58,3 @@
   - `git checkout main`
   - `git pull origin main`
   ### And repeat!
-
-## Requirements
-- Ruby
-- Rails
-- Postgresql
-- Node.js
-- React
-
-## Install Dependencies (First time only)
-- Install ruby v<v>: `rvm install <v>`
-- Install rails dependencies: `bundle install`
-- Install node dep: `yarn`
-
-
-## Database creation & initialization
-- `rake db:create`
-- `rake db:migrate`

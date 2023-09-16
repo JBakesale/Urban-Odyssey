@@ -2,7 +2,7 @@
 
 ![Logo](https://github.com/JBakesale/Urban-Odyssey/blob/main/client/public/images/logo_transparent2.png)
 
-This project is an ongoing endeavor to leverage openAI and Maps API to create location based productivity adventures!
+This project is an ongoing endeavor to leverage openAI and Maps API to create a mobile-first location-based productivity adventure app!
 
 ## Screenshots
 

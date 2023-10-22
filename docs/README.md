@@ -32,10 +32,13 @@ git clone https://github.com/JBakesale/Urban-Odyssey.git
 - Install front-end dependencies: `npm install`
 - Install node dep: `yarn`
 
-
 ## Database initialization
 - `rails db:create`
 
+## Launch the App
+- From Client Directory: `npm start`
+- From Server Directory: `bin/rails server`
+- From CLI, open postgres: `psql`, then connect to appropriate database `\c server_development`
 
 ## Github Workflow Overview (for contributors)
 `cd Urban-Odyssey`
@@ -58,3 +61,18 @@ git clone https://github.com/JBakesale/Urban-Odyssey.git
   - `git checkout main`
   - `git pull origin main`
   ### And repeat!
+
+## What we're currently implementing:
+- https://trello.com/b/xqvIqmTw/urban-odyssey
+
+- [ ] Code Revision & Cleanup
+  - remove logs
+  - debug double fetch from useEffect
+  - useContext
+  - hooks directory
+  - helper function directory
+  - check for nested paragraph elements
+- [ ] maps API
+- [ ] migrate db to node.js
+- [ ] 'create adventure' component
+

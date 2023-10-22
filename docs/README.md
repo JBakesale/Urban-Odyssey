@@ -36,6 +36,10 @@ git clone https://github.com/JBakesale/Urban-Odyssey.git
 ## Database initialization
 - `rails db:create`
 
+## Launch the App
+- From Client Directory: `npm start`
+- From Server Directory: `bin/rails server`
+- From CLI, open postgres: `psql`, then connect to appropriate database `\c server_development`
 
 ## Github Workflow Overview (for contributors)
 `cd Urban-Odyssey`

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useUserLocation } from "../providers/userLocationContext";
+import { useUserLocation } from "../providers/UserLocationProvider";
 import { LocationsContext } from "../providers/LocationsProvider";
 import { useAdventureId } from "../providers/AdventureProvider";
 

@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import '../styles/Navbar.scss';
-import { useUserLocation } from '../providers/userLocationContext';
+import { useUserLocation } from '../providers/UserLocationProvider';
 
 const pages = ['Profile', 'About Us', 'Contact'];
 

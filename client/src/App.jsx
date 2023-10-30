@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './views/HomePage';
@@ -9,6 +8,7 @@ import SignUp from './views/SignUp';
 import Login from './views/Login';
 import AdventurePage from './components/AdventurePage';
 import ResponsiveAppBar from './components/AppBar';
+import { AdventureProvider } from './providers/AdventureProvider';
 
 
 

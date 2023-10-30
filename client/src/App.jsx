@@ -9,6 +9,8 @@ import Login from './views/Login';
 import AdventurePage from './components/AdventurePage';
 import ResponsiveAppBar from './components/AppBar';
 import { AdventureProvider } from './providers/AdventureProvider';
+import { UserLocationProvider } from './providers/UserLocationProvider';
+import { LocationsProvider } from './providers/LocationsProvider';
 
 
 

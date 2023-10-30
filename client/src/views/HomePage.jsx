@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import BackgroundContainer from "../components/BackgroundContainer";
 import AdventuresList from "../components/AdventuresList";
 import '../styles/HomePage.scss'

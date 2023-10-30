@@ -76,5 +76,4 @@ git clone https://github.com/JBakesale/Urban-Odyssey.git
 - [ ] migrate db to node.js
 - [ ] 'create adventure' component
 - [ ] password hashing, bcrypt
-
-
+- [ ] user profile page connected to db updates exp pts based on adventure completion

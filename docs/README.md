@@ -75,4 +75,6 @@ git clone https://github.com/JBakesale/Urban-Odyssey.git
 - [ ] maps API
 - [ ] migrate db to node.js
 - [ ] 'create adventure' component
+- [ ] password hashing, bcrypt
+
 
